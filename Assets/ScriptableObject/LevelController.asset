@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: LevelController
   m_EditorClassIdentifier: 
   mainSceneIndex: 0
-  showConsoleMessage: 1
+  showConsoleMessage: 0
