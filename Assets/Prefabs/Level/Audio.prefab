@@ -185,7 +185,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 8911742078530553623, guid: 548a7f001ca6d3d4cb67c8edf84f62a3, type: 2}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -326,6 +326,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Listener
       objectReference: {fileID: 0}
+    - target: {fileID: 4350056724421264399, guid: 7f6b0a44ef8c25f44a71683942631d7f, type: 3}
+      propertyPath: _channel
+      value: 
+      objectReference: {fileID: 11400000, guid: 787f4f6cd93b54846b6e9669b5525fa4, type: 2}
     - target: {fileID: 4350056724421264399, guid: 7f6b0a44ef8c25f44a71683942631d7f, type: 3}
       propertyPath: OnEventRaised.m_PersistentCalls.m_Calls.Array.size
       value: 1
