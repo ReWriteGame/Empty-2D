@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.Events;
 
 /// <summary>
@@ -6,25 +7,40 @@ using UnityEngine.Events;
 /// </summary>
 public class VoidEventListener : MonoBehaviour
 {
-	[SerializeField] private VoidEventChannelSO _channel = default;
+    [SerializeField] private VoidEventChannelSO channel = default;
+    [SerializeField, Range(0, 30)] private float delayActivation = 0;
 
-	public UnityEvent OnEventRaised;
+    public UnityEvent OnEventRaised;
 
-	private void OnEnable()
-	{
-		if (_channel != null)
-			_channel.OnEventRaised += Respond;
-	}
 
-	private void OnDisable()
-	{
-		if (_channel != null)
-			_channel.OnEventRaised -= Respond;
-	}
+    private void OnEnable()
+    {
+        if (channel != null)
+            channel.OnEventRaised += Respond;
+    }
 
-	private void Respond()
-	{
-		if (OnEventRaised != null)
-			OnEventRaised.Invoke();
-	}
+    private void OnDisable()
+    {
+        if (channel != null)
+            channel.OnEventRaised -= Respond;
+    }
+
+    private void Respond()
+    {
+        StartCoroutine(RespondCor());
+    }
+
+    public void Activate()
+    {
+        if (OnEventRaised != null)
+            OnEventRaised.Invoke();
+    }
+
+
+    private IEnumerator RespondCor()
+    {
+        yield return new WaitForSeconds(delayActivation);
+        Activate();
+        yield break;
+    }
 }

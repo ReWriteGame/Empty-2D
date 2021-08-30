@@ -8,10 +8,12 @@ using UnityEngine.Events;
 [CreateAssetMenu(menuName = "Events/Void Event Channel")]
 public class VoidEventChannelSO : ScriptableObject
 {
-	public UnityAction OnEventRaised;
+    [SerializeField] private bool showConsoleMessage = true;
+    public UnityAction OnEventRaised;
 
 	public void RaiseEvent()
 	{
+        if(showConsoleMessage) Debug.Log($"Event \"{this.name}\" called.");
 		if (OnEventRaised != null)
 			OnEventRaised.Invoke();
 	}
