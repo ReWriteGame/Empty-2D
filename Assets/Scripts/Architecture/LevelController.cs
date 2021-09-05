@@ -7,9 +7,9 @@ public class LevelController : ScriptableObject
     [SerializeField] private int mainSceneIndex = 0;
     [SerializeField] private bool showConsoleMessage = true;
 
-    public void loadNextLevel()
+    public void LoadNextLevel()
     {
-        resumeGame();
+        ResumeGame();
         int numberOfLevel = SceneManager.GetActiveScene().buildIndex;// get current level index
         if (showConsoleMessage) Debug.Log($"Load level index: {numberOfLevel + 1}");
 
@@ -18,40 +18,43 @@ public class LevelController : ScriptableObject
         else if (showConsoleMessage) Debug.LogWarning($"Can't load next level. Level is last!");
     }
 
-    public void reStartLevel()
+    public void ReStartLevel()
     {
-        resumeGame();
+        ResumeGame();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         if (showConsoleMessage) Debug.Log($"Level reloaded!");
     }
 
-    public void loadLevel(int numLevel)
+    public void LoadLevel(int numLevel)
     {
-        resumeGame();
+        ResumeGame();
         Debug.Log($"Load level index: {numLevel}");
         if (numLevel < SceneManager.sceneCountInBuildSettings - 1 && numLevel >= 0)
             SceneManager.LoadScene(numLevel);
         else if (showConsoleMessage) Debug.LogWarning($"Can't load level. Incorrect number of Level!");
     }
 
-    public void exitGame()
+    public void ExitGame()
     {
-        resumeGame();
+        ResumeGame();
         Application.Quit();
         if (showConsoleMessage) Debug.Log("Quit the Game.");
     }
-    public void loadMainMenu()
+
+    public void LoadMainMenu()
     {
-        resumeGame();
+        ResumeGame();
         SceneManager.LoadScene(mainSceneIndex);
         if (showConsoleMessage) Debug.Log($"Load MainMenu scene index: {mainSceneIndex}.");
     }
-    public void pauseGame()
+
+    public void PauseGame()
     {
         Time.timeScale = 0;
         if (showConsoleMessage) Debug.Log($"Game paused.");
     }
-    public void resumeGame()
+
+    public void ResumeGame()
     {
         Time.timeScale = 1;
         if (showConsoleMessage) Debug.Log($"Game continue.");
