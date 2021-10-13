@@ -5036,6 +5036,10 @@ PrefabInstance:
       propertyPath: m_Text
       value: EXIT
       objectReference: {fileID: 0}
+    - target: {fileID: 3508549001478083143, guid: ed7898d81d247794ab02d1b05de1fa65, type: 3}
+      propertyPath: m_Text
+      value: Quit
+      objectReference: {fileID: 0}
     - target: {fileID: 3685347850320085689, guid: ed7898d81d247794ab02d1b05de1fa65, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -5446,6 +5450,10 @@ PrefabInstance:
     - target: {fileID: 1391808007664830572, guid: ed7898d81d247794ab02d1b05de1fa65, type: 3}
       propertyPath: m_Text
       value: PLAY
+      objectReference: {fileID: 0}
+    - target: {fileID: 3508549001478083143, guid: ed7898d81d247794ab02d1b05de1fa65, type: 3}
+      propertyPath: m_Text
+      value: Play
       objectReference: {fileID: 0}
     - target: {fileID: 3685347850320085689, guid: ed7898d81d247794ab02d1b05de1fa65, type: 3}
       propertyPath: m_Pivot.x
@@ -6597,6 +6605,10 @@ PrefabInstance:
       propertyPath: m_Text
       value: OPTIONS
       objectReference: {fileID: 0}
+    - target: {fileID: 3508549001478083143, guid: ed7898d81d247794ab02d1b05de1fa65, type: 3}
+      propertyPath: m_Text
+      value: Options
+      objectReference: {fileID: 0}
     - target: {fileID: 3685347850320085689, guid: ed7898d81d247794ab02d1b05de1fa65, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -6865,6 +6877,10 @@ PrefabInstance:
     - target: {fileID: 4593615002306395804, guid: 2ba73241dd618b74b9735dc814ba74ec, type: 3}
       propertyPath: m_Name
       value: Text
+      objectReference: {fileID: 0}
+    - target: {fileID: 8398421598281271720, guid: 2ba73241dd618b74b9735dc814ba74ec, type: 3}
+      propertyPath: m_Text
+      value: Options
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2ba73241dd618b74b9735dc814ba74ec, type: 3}
