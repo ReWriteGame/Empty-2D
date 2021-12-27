@@ -11,8 +11,8 @@ public class VoidEventListener : MonoBehaviour
     [SerializeField, Range(0, 30)] private float delayActivation = 0;
 
     public UnityEvent OnEventRaised;
-
-
+    
+    
     private void OnEnable()
     {
         if (channel != null)
@@ -29,18 +29,16 @@ public class VoidEventListener : MonoBehaviour
     {
         StartCoroutine(RespondCor());
     }
-
-    public void Activate()
-    {
-        if (OnEventRaised != null)
-            OnEventRaised.Invoke();
-    }
-
-
+    
     private IEnumerator RespondCor()
     {
         yield return new WaitForSeconds(delayActivation);
-        Activate();
+        CallEvent();
         yield break;
+    }
+    private void CallEvent()
+    {
+        if (OnEventRaised != null)
+            OnEventRaised.Invoke();
     }
 }
