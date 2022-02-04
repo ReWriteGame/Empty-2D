@@ -5135,7 +5135,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1088660190024547605, guid: 78ef6db121c9a3a4c8822dacc8d3a7b4, type: 3}
       propertyPath: delayActivation
-      value: 0
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 1088660190024547605, guid: 78ef6db121c9a3a4c8822dacc8d3a7b4, type: 3}
       propertyPath: OnActivateEvent.m_PersistentCalls.m_Calls.Array.size
@@ -5259,7 +5259,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6962622946404314255, guid: 78ef6db121c9a3a4c8822dacc8d3a7b4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6962622946404314255, guid: 78ef6db121c9a3a4c8822dacc8d3a7b4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
@@ -5821,6 +5821,10 @@ PrefabInstance:
     - target: {fileID: 560917744575795301, guid: 78ef6db121c9a3a4c8822dacc8d3a7b4, type: 3}
       propertyPath: m_Name
       value: Exit
+      objectReference: {fileID: 0}
+    - target: {fileID: 1088660190024547605, guid: 78ef6db121c9a3a4c8822dacc8d3a7b4, type: 3}
+      propertyPath: delayActivation
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1088660190024547605, guid: 78ef6db121c9a3a4c8822dacc8d3a7b4, type: 3}
       propertyPath: OnActivateEvent.m_PersistentCalls.m_Calls.Array.size
@@ -6598,6 +6602,10 @@ PrefabInstance:
     - target: {fileID: 560917744575795301, guid: 78ef6db121c9a3a4c8822dacc8d3a7b4, type: 3}
       propertyPath: m_Name
       value: Options
+      objectReference: {fileID: 0}
+    - target: {fileID: 1088660190024547605, guid: 78ef6db121c9a3a4c8822dacc8d3a7b4, type: 3}
+      propertyPath: delayActivation
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1088660190024547605, guid: 78ef6db121c9a3a4c8822dacc8d3a7b4, type: 3}
       propertyPath: OnActivateEvent.m_PersistentCalls.m_Calls.Array.size
