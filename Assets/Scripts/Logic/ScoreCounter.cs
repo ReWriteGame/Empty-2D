@@ -5,8 +5,9 @@ using UnityEngine.Events;
 public class ScoreCounter : MonoBehaviour
 {
     [SerializeField] private float score = 0;
-    [SerializeField] private float maxScore;
     [SerializeField] private float minScore = 0;
+    [SerializeField] private float maxScore = 100;
+
 
     public UnityEvent changeScoreEvent;
     public UnityEvent takeAwayScoreEvent;
@@ -15,8 +16,8 @@ public class ScoreCounter : MonoBehaviour
     public UnityEvent isMaxScoreEvent;
 
     public float Score { get => score; private set => score = value; }
-    public float MaxScore { get => maxScore; private set => maxScore = value; }
     public float MinScore { get => minScore; private set => minScore = value; }
+    public float MaxScore { get => maxScore; private set => maxScore = value; }
 
 
     public void Add(float value)
@@ -27,9 +28,7 @@ public class ScoreCounter : MonoBehaviour
         // Events
         changeScoreEvent?.Invoke();
         addScoreEvent?.Invoke();
-        CheckIsMax();
-        //changeHP?.Invoke(data.HP);
-        //healthEvent?.Invoke(health);
+        if (CheckIsMax()) isMaxScoreEvent?.Invoke();
     }
 
     public void TakeAway(float value)
@@ -40,21 +39,26 @@ public class ScoreCounter : MonoBehaviour
         // Events
         changeScoreEvent?.Invoke();
         takeAwayScoreEvent?.Invoke();
-        CheckIsMin();
-        //changeHP?.Invoke(data.HP);
-        //damageEvent?.Invoke(health);
+        if (CheckIsMin()) isMinScoreEvent?.Invoke();
     }
 
     public bool CheckIsMin()
     {
-        if (score <= minScore) isMinScoreEvent?.Invoke();
         return score <= minScore ? true : false;
     }
     public bool CheckIsMax()
     {
-        if (score >= maxScore) isMaxScoreEvent?.Invoke();
         return score >= maxScore ? true : false;
     }
+
+    public void CorrectScore()
+    {
+        if(CheckIsMax()) score = maxScore;
+        if(CheckIsMin()) score = minScore;
+    }
+    
+    private void Awake()
+    {
+        CorrectScore();
+    }
 }
-//todo events/var overhill overdamage
-//todo зависимость макс хп от хп при настройке

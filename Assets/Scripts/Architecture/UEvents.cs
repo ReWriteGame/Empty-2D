@@ -5,6 +5,7 @@ using UnityEngine.Events;
 public class UEvents : MonoBehaviour
 {
    [SerializeField, Range(0, 30)] private float delayActivation = 0;
+   [SerializeField] private bool ignoreTimeScale = false;
 
    public UnityEvent OnActivateEvent;
 
@@ -21,7 +22,9 @@ public class UEvents : MonoBehaviour
    
    private IEnumerator RespondCor()
    {
-      yield return new WaitForSeconds(delayActivation);
+      if(ignoreTimeScale)yield return new WaitForSecondsRealtime (delayActivation);
+      else yield return new WaitForSeconds(delayActivation);
+      
       CallEvent();
       yield break;
    }
