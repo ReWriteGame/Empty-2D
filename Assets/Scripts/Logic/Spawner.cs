@@ -21,11 +21,11 @@ public class Spawner : MonoBehaviour
     public UnityEvent startSpawnEvent;
     public UnityEvent stopSpawnEvent;
     public UnityEvent spawnPrefabEvent;
+    public UnityEvent endSpawnEvent;
     
-
     private Coroutine currentCoroutine;
     
-    private void Awake()
+    private void Start()
     {
         if (playOnAwake && spawnerObjects.Count > 0) StartSpawn();
     }
@@ -34,7 +34,7 @@ public class Spawner : MonoBehaviour
     {
         startSpawnEvent?.Invoke();
         if (currentCoroutine == null)
-            currentCoroutine = StartCoroutine(StartSpawnCor());
+            currentCoroutine = StartCoroutine(StartSpawnCor(Random.Range(numberOfSpawns.x, numberOfSpawns.y)));
     }
 
     public void StopSpawn()
@@ -69,22 +69,21 @@ public class Spawner : MonoBehaviour
     }
     
     
-    private IEnumerator StartSpawnCor()
+    private IEnumerator StartSpawnCor(int sizeSpawnObjects = 0)
     {
-        if(firstSpawnWithoutDelay) SpawnRandomPrefab();
-        while (infinity)
+        if (sizeSpawnObjects > 0 && firstSpawnWithoutDelay)
+        {
+            SpawnRandomPrefab();
+            sizeSpawnObjects--;
+        }
+
+        for (int i = 0; i < sizeSpawnObjects || infinity; i++)
         {
             yield return new WaitForSeconds(Random.Range(delayВetweenSpawns.x, delayВetweenSpawns.y));
             SpawnRandomPrefab();
         }
-
-        for (int i = 0; i < Random.Range(numberOfSpawns.x, numberOfSpawns.y); i++)
-        {
-            yield return new WaitForSeconds(Random.Range(delayВetweenSpawns.x, delayВetweenSpawns.y));
-            SpawnRandomPrefab();
-        }
-
-        stopSpawnEvent?.Invoke();
+        
+        endSpawnEvent?.Invoke();
         yield break;
     }
     // выпадающий список сделать для выбора режима работы 
