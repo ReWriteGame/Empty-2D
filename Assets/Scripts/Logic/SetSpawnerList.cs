@@ -6,7 +6,7 @@ public class SetSpawnerList : MonoBehaviour
     [SerializeField] private PrefabListData prefabs ;
      private Spawner spawner;
 
-    private void Start()
+    private void Awake()
     {
         spawner = GetComponent<Spawner>();
         if(prefabs != null) spawner.spawnerObjects.AddRange(prefabs.Prefabs);

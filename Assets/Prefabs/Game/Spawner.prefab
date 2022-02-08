@@ -43,14 +43,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: daf326d15d0cced4883bf4488a3482fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnerData: {fileID: 0}
-  spawnParent: {fileID: 0}
-  spawnPosition: {fileID: 0}
-  spawnRotation: {fileID: 0}
+  spawnParent: {fileID: 2876512844031422987}
+  spawnPosition: {fileID: 2876512844031422987}
+  spawnRotation: {fileID: 2876512844031422987}
+  firstSpawnWithoutDelay: 1
   playOnAwake: 1
   infinity: 1
   numberOfSpawns: {x: 1, y: 1}
   "delay\u0412etweenSpawns": {x: 1, y: 1}
+  spawnerObjects: []
   startSpawnEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -58,5 +59,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   spawnPrefabEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  endSpawnEvent:
     m_PersistentCalls:
       m_Calls: []
