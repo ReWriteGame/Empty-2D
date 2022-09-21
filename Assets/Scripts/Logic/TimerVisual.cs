@@ -1,10 +1,10 @@
 using System;
+using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class TimerVisual : MonoBehaviour
 {
-    [SerializeField] private Text output;
+    [SerializeField] private TextMeshProUGUI output;
     [SerializeField] private Timer timer;
     [SerializeField] private int numberOfCharacters = 2;
     
