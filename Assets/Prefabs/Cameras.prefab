@@ -45,6 +45,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1206518307827770512}
   - component: {fileID: 1206518307827770513}
+  - component: {fileID: 2555408481848082535}
   m_Layer: 0
   m_Name: UI Camera
   m_TagString: Untagged
@@ -110,6 +111,21 @@ Camera:
   m_OcclusionCulling: 0
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &2555408481848082535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1206518307827770510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac120ef11ba2fc34cb0916e33d26534d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  screenAspect: {x: 16, y: 9}
+  camera: {fileID: 0}
+  useOwnCamera: 1
 --- !u!1 &1206518308393151861
 GameObject:
   m_ObjectHideFlags: 0
@@ -120,6 +136,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1206518308393151863}
   - component: {fileID: 1206518308393151860}
+  - component: {fileID: 2656544228510207074}
   m_Layer: 0
   m_Name: Effect Camera
   m_TagString: Untagged
@@ -185,6 +202,21 @@ Camera:
   m_OcclusionCulling: 0
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &2656544228510207074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1206518308393151861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac120ef11ba2fc34cb0916e33d26534d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  screenAspect: {x: 16, y: 9}
+  camera: {fileID: 0}
+  useOwnCamera: 1
 --- !u!1 &1206518308985481405
 GameObject:
   m_ObjectHideFlags: 0
@@ -196,6 +228,7 @@ GameObject:
   - component: {fileID: 1206518308985481281}
   - component: {fileID: 1206518308985481406}
   - component: {fileID: 1206518308985481404}
+  - component: {fileID: 8047320737913077236}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -269,6 +302,21 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1206518308985481405}
   m_Enabled: 1
+--- !u!114 &8047320737913077236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1206518308985481405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac120ef11ba2fc34cb0916e33d26534d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  screenAspect: {x: 16, y: 9}
+  camera: {fileID: 0}
+  useOwnCamera: 1
 --- !u!1 &1206518309065925049
 GameObject:
   m_ObjectHideFlags: 0
@@ -279,6 +327,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1206518309065925048}
   - component: {fileID: 1206518309065925051}
+  - component: {fileID: 2387803550998522272}
   m_Layer: 0
   m_Name: Panel Camera
   m_TagString: Untagged
@@ -344,3 +393,18 @@ Camera:
   m_OcclusionCulling: 0
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &2387803550998522272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1206518309065925049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac120ef11ba2fc34cb0916e33d26534d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  screenAspect: {x: 16, y: 9}
+  camera: {fileID: 0}
+  useOwnCamera: 1
