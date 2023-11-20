@@ -61,6 +61,7 @@ sysinfo.txt
 # Builds
 *.apk
 *.aab
+*.app
 *.unitypackage
 
 # Crashlytics generated file
@@ -72,3 +73,6 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+
+# Recordings can get excessive in size
+[Rr]ecordings/
