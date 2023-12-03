@@ -1,18 +1,47 @@
+using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class GameLogic : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private ScoreCounterMB scoreCounter;
+    [SerializeField] private DataSave dataSave;
+
+    public UnityEvent OnWinGame;
+    public UnityEvent OnLoseGame;
+    public UnityEvent OnEndGame;
+
+    private void Start()
     {
-        
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnDestroy()
     {
-        
+    }
+    
+    public void WinGame()
+    {
+        OnWinGame?.Invoke();
+        EndGame();
+    }
+
+    public void LoseGame()
+    {
+        OnLoseGame?.Invoke();
+        EndGame();
+    }
+
+    private void EndGame()
+    {
+        SaveData();
+        OnEndGame?.Invoke();
+    }
+
+    private void SaveData()
+    {
+        dataSave.HeightScore = Mathf.Max(dataSave.HeightScore, (int)scoreCounter.ScoreCounter.Value);
+        dataSave.LastScore = (int)scoreCounter.ScoreCounter.Value;
+        dataSave.AllScore += (int)scoreCounter.ScoreCounter.Value;
     }
 }
